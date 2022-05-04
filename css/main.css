@@ -1,0 +1,32 @@
+*{
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: 'Montserrat', sans-serif;
+    background-color: white;
+}
+
+
+h1{
+    font-weight: 700px;
+    text-align: center;
+    font-size: 50px;
+}
+
+.italic-content{
+    text-align: center;
+    font-style: italic;
+    font-size: 20px;
+}
+.special{
+    color: red;
+    display:inline;
+    background-color: #F9EBC8;
+}
+.text-content{
+    display: inline;
+}
+
+.text-content-blur{
+    color: #EDE6DB;
+}
