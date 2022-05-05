@@ -33,20 +33,28 @@
 
 <body>
 
-    <div class="nav" id = "top">
+    <!-- Go to top logo -->
+    <button onclick="topFunction()" id="myBtn" title="Go to top">Top</button>
+    <!-- END -->
+
+    <!-- Header -->
+    <div class="nav">
         <div class="nav_left">
             <a href="https://colorhunt.co/">
                 <p>Main</p>
             </a>
         </div>
+        <!-- Các nút giúp đi xuống phần mong muốn -->
         <div class="nav_right">
+            <!-- href = "#id của phần đó" -->
             <a href="#second"><span>About</span></a>
             <a href="#third"><span>Menu</span></a>
             <a href="#bot"><span>Contact</span></a>
         </div>
     </div>
+    <!-- END -->
 
-
+    <!-- Phần nội dung chính -->
     <section class="content">
 
         <!-- First Content -->
@@ -57,6 +65,7 @@
 
 
         <!-- Second Content -->
+        <!-- Set ID để scroll tới phần nhanh hơn -->
         <div class="second-content" id="second">
             <div class="second-content-left">
                 <img src="/image/viper.jpg" alt="viper">
@@ -80,7 +89,8 @@
         </div>
 
         <!-- Third content -->
-        <div class="third-content" id = "third">
+        <!-- Set ID để scroll tới phần nhanh hơn -->
+        <div class="third-content" id="third">
             <div class="third-content-left" style="padding-left: 10px;">
                 <h1 style="text-align: center;">9/5/1945</h1>
                 <p class="italic-content">Một chiến thắng vĩ đại trong lịch sử loài người</p>
@@ -100,23 +110,35 @@
             </div>
         </div>
     </section>
-    <section class = "footer" id = "bot">
+    <!-- END -->
+    
+
+
+    <!-- Footer -->
+    <!-- Set ID để scroll tới phần nhanh hơn -->
+    <section class="footer" id="bot">
         <div>
-            <a href="#top" style="color: red;"><p>Find me on social media.</p></a>
+            <p>Find me on social media.</p>
+            
         </div>
-        <div class = "list-snw">
+        <div class="list-snw">
             <!-- <i class="fa-brands fa-facebook-f" id = "facebook"></i> -->
-            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f" id = "facebook"></i></a>
+            <a href="https://www.facebook.com/"><i class="fa-brands fa-facebook-f" id="facebook"></i></a>
             <!-- <i class="fa-brands fa-instagram" id = "instagram"></i> -->
-            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" id = "instagram"></i></a>
+            <a href="https://www.instagram.com/"><i class="fa-brands fa-instagram" id="instagram"></i></a>
             <!-- <i class="fa-brands fa-twitch" id = "twitch"></i> -->
-            <a href="https://www.twitch.tv/"><i class="fa-brands fa-twitch" id = "twitch"></i></a>
+            <a href="https://www.twitch.tv/"><i class="fa-brands fa-twitch" id="twitch"></i></a>
             <!-- <i class="fa-brands fa-linkedin-in" id = "linkedin"></i> -->
-            <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in" id = "linkedin"></i></a>
+            <a href="https://www.linkedin.com/"><i class="fa-brands fa-linkedin-in" id="linkedin"></i></a>
         </div>
-</section>
+    </section>
+    <!-- END -->
+
+
 
     <!-- JQuery Script -->
+
+    <!-- Giúp Scroll tới phần mong muốn không cần chỉnh -->
     <script>
         $("a[href*='#']:not([href='#])").click(function () {
             let target = $(this).attr("href");
@@ -131,6 +153,33 @@
             event.preventDefault();
         });
     </script>
+    <!-- END -->
+
+    <!-- Giúp scroll lên top và button TOP -->
+    <script>
+        //Get the button:
+        mybutton = document.getElementById("myBtn");
+
+        // When the user scrolls down 20px from the top of the document, show the button
+        window.onscroll = function () { scrollFunction() };
+
+        function scrollFunction() {
+            if (document.body.scrollTop > 20 || document.documentElement.scrollTop > 20) {
+                mybutton.style.display = "block";
+            } else {
+                mybutton.style.display = "none";
+            }
+        }
+
+        // When the user clicks on the button, scroll to the top of the document
+        function topFunction() {
+            document.body.scrollTop = 0; // For Safari
+            document.documentElement.scrollTop = 0; // For Chrome, Firefox, IE and Opera
+        }
+
+    </script>
+    <!-- END -->
+
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
