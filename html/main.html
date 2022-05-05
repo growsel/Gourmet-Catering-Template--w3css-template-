@@ -20,6 +20,8 @@
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/css/bootstrap.min.css" rel="stylesheet"
         integrity="sha384-1BmE4kWBq78iYhFldvKuhfTAU6auU8tT94WrHftjDbrCEXSU1oBoqyl2QvZ6jIW3" crossorigin="anonymous">
 
+    <!-- JQuery -->
+    <script src="/jquery/jquery-3.6.0.min.js"></script>
     <!-- CSS -->
     <link rel="stylesheet" href="/css/main.css">
     <link rel="stylesheet" href="/css/nav.css">
@@ -31,16 +33,16 @@
 
 <body>
 
-    <div class="nav">
+    <div class="nav" id = "top">
         <div class="nav_left">
             <a href="https://colorhunt.co/">
                 <p>Main</p>
             </a>
         </div>
         <div class="nav_right">
-            <span>About</span>
-            <span>Menu</span>
-            <span>Contact</span>
+            <a href="#second"><span>About</span></a>
+            <a href="#third"><span>Menu</span></a>
+            <a href="#bot"><span>Contact</span></a>
         </div>
     </div>
 
@@ -55,7 +57,7 @@
 
 
         <!-- Second Content -->
-        <div class="second-content">
+        <div class="second-content" id="second">
             <div class="second-content-left">
                 <img src="/image/viper.jpg" alt="viper">
 
@@ -78,7 +80,7 @@
         </div>
 
         <!-- Third content -->
-        <div class="third-content">
+        <div class="third-content" id = "third">
             <div class="third-content-left" style="padding-left: 10px;">
                 <h1 style="text-align: center;">9/5/1945</h1>
                 <p class="italic-content">Một chiến thắng vĩ đại trong lịch sử loài người</p>
@@ -98,9 +100,9 @@
             </div>
         </div>
     </section>
-    <section class = "footer">
+    <section class = "footer" id = "bot">
         <div>
-            <p>Find me on social media.</p>
+            <a href="#top" style="color: red;"><p>Find me on social media.</p></a>
         </div>
         <div class = "list-snw">
             <!-- <i class="fa-brands fa-facebook-f" id = "facebook"></i> -->
@@ -114,7 +116,21 @@
         </div>
 </section>
 
-
+    <!-- JQuery Script -->
+    <script>
+        $("a[href*='#']:not([href='#])").click(function () {
+            let target = $(this).attr("href");
+            $("html,body")
+                .stop()
+                .animate(
+                    {
+                        scrollTop: $(target).offset().top,
+                    },
+                    1000
+                );
+            event.preventDefault();
+        });
+    </script>
     <!-- Bootstrap -->
     <script src="https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js"
         integrity="sha384-7+zCNj/IqJ95wo16oMtfsKbZ9ccEh31eOz1HGyDuCQ6wgnyJNSYdrPa03rtR1zdB"
