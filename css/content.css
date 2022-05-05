@@ -1,11 +1,7 @@
-
-
-.content{
-
-}
+.content {}
 
 /* Hình ảnh ở giữa màn hình và có text ở góc trái dưới của hình */
-.first-content{
+.first-content {
     position: relative;
     text-align: left;
     color: black;
@@ -25,14 +21,23 @@
 
 /* Second content */
 
-.second-content{
-    border: solid red 2px;
+.second-content {
     display: flex;
     justify-content: space-between;
     padding: 20px 400px 0 450px;
 }
 
-.second-content-right{
+.second-content-right {
     padding-left: 30px;
 }
 
+/* Third content */
+.third-content {
+    display: flex;
+    justify-content: space-between;
+    padding: 20px 450px 0 400px;
+}
+.third-content-left{
+    padding: 0px 30px 10px 10px;
+    line-height: 30px;
+}
